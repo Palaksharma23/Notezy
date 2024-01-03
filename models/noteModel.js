@@ -18,6 +18,12 @@ const noteSchema = new mongoose.Schema({
     ref: 'User',
     required: [true, 'Note must belong to a user'],
   },
+  sharedWith: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  ],
 });
 
 const Note = mongoose.model('Note', noteSchema);

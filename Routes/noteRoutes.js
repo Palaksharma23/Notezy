@@ -10,7 +10,7 @@ router
   .get(noteController.getAllNotes)
   .post(noteController.createNote);
 router.route('/search').get(noteController.searchNote);
-
+router.route('/:id/share').post(noteController.shareNote);
 router
   .route('/:id')
   .get(noteController.getNote)

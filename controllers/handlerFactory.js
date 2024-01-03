@@ -37,7 +37,10 @@ exports.updateOne = (Model) =>
 
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
-    console.log(req.body);
+    if (req.user._id) {
+      req.body.user = req.user._id;
+    }
+
     const doc = await Model.create(req.body);
 
     res.status(201).json({
@@ -48,15 +51,23 @@ exports.createOne = (Model) =>
     });
   });
 
-exports.getOne = (Model) =>
+exports.getOne = (Model, filter) =>
   catchAsync(async (req, res, next) => {
-    let query = Model.findById(req.params.id);
+    // let filter = {};
+    // if (req.user._id) filter = { user: req.user._id, _id: req.params.id };
+
+    let query = Model.find(filter);
     const doc = await query;
 
     if (!doc) {
       return next(new AppError('No document found with that ID', 404));
     }
 
+    if (doc.length === 0) {
+      return next(
+        new AppError('You are not authorized to view this note', 404)
+      );
+    }
     res.status(200).json({
       status: 'success',
       data: {
@@ -65,11 +76,8 @@ exports.getOne = (Model) =>
     });
   });
 
-exports.getAll = (Model) =>
+exports.getAll = (Model, filter) =>
   catchAsync(async (req, res, next) => {
-    let filter = {};
-    if (req.params.tourId) filter = { tour: req.params.tourId };
-
     const features = new APIFeatures(Model.find(filter), req.query)
       .filter()
       .sort()

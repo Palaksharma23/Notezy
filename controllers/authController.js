@@ -98,7 +98,6 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   req.user = currentUser;
-  req.body.user = currentUser._id;
   res.locals.user = currentUser;
   next();
 });
