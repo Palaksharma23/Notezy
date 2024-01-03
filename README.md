@@ -7,9 +7,9 @@
 
 <h1>Notezy ✒</h1>
 
-<b>Deployed Backend 👉: </b> [Notezy](https://touristerapp.onrender.com/)
-
 <b>Postman API Documentation 👉: </b> [API Documentation](https://documenter.getpostman.com/view/27055315/2s9YsFEELg)
+
+<b>Deployed Backend 👉: </b> [Notezy](https://notezy.onrender.com)
 
 </div>
 
@@ -46,9 +46,9 @@
 
 ## Deployed Links
 
-* <b>Deployed Backend 👉: </b> [Notezy](https://touristerapp.onrender.com/)
-
 * <b>Postman API Documentation 👉: </b> [API Documentation](https://documenter.getpostman.com/view/27055315/2s9YsFEELg)
+
+* <b>Deployed Backend 👉: </b> [Notezy](https://notezy.onrender.com)
   
   
 <br>
@@ -192,9 +192,11 @@ npm  install
 
 Add a config.env file in the root directory and enter your MongoDb Atlas and REDIS Client credentials 
 The format of config.env file should be similar to the following
+
 ```
+NODE_ENV=Your_Node_Environment_Development_or_Production
+PORT=Port_or_3000 (optional)
 DATABASE=Your_MongoDB_Connection_String
-REDISPASSWORD=Your_REDIS_Client_Password
 JWT_SECRET=Your_JWT_Secret_Key
 JWT_EXPIRES_IN=Your_JWT_Expiry_Time
 JWT_COOKIE_EXPIRES_IN=Your_JWT_Cookie_Expiry_Time
