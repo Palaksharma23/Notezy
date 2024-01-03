@@ -20,6 +20,8 @@
 - [Introduction](#introduction)
 - [Deployed Links](#deployed-links)
 - [Technologies and Features](#technologies-and-features)
+- [Choice of Technologies](#choice-of-technologies)
+- [Features](#features)
 - [Top Level Directory Structure](#top-level-directory-structure)
 - [Installation](#installation)
 - [Feedback](#feedback)
@@ -99,6 +101,9 @@ To enhance search functionality, I integrated Atlas Search, a powerful feature p
 These technology choices are aimed at providing a secure, scalable, and efficient environment for building and deploying the Notezy application.
 
   
+<br>
+  
+### Features
 
 This project consists of wide variety of advanced features:
 
@@ -107,6 +112,17 @@ This project consists of wide variety of advanced features:
 1) Fast, feature rich REST API (includes filters, sorts, pagination, and much more)
 
 2) Security Features such as Rate Limiting, Password Encryption, etc.
+
+3) User Authentication features of SignUp, Login, and Logout
+
+4) Notes features such as 
+-- Create a note
+-- Update an existing note
+-- Delete a note
+-- Get all notes
+-- Get a note by ID
+-- Share a note with another user
+-- Search for notes based on keywords
 
 <br>
 
@@ -206,7 +222,7 @@ npm run start:prod
 
 Server will run on  `localhost:3000`.
 
-<be>
+<br>
 
 ## Feedback
 
