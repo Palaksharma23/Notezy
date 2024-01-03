@@ -9,6 +9,7 @@ router
   .route('/')
   .get(noteController.getAllNotes)
   .post(noteController.createNote);
+router.route('/search').get(noteController.searchNote);
 
 router
   .route('/:id')
