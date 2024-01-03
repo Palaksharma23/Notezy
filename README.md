@@ -3,14 +3,33 @@
 <br>
 <div  align="center">
 <img  src="https://i.ibb.co/KwrYWGB/Whats-App-Image-2024-01-04-at-12-02-11-AM.jpg"  alt="Notezy Logo"  height ="auto"  width="400" />
-
 <br>
 
 <h1>Notezy ✒</h1>
 
+<b>Deployed Backend 👉: </b> [Notezy](https://touristerapp.onrender.com/)
+
+<b>Postman API Documentation 👉: </b> [API Documentation](https://documenter.getpostman.com/view/27055315/2s9YsFEELg)
+
+</div>
+
+<br>
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Deployed Links](#deployed-links)
+- [Technologies and Features](#technologies-and-features)
+- [Top Level Directory Structure](#top-level-directory-structure)
+- [Installation](#installation)
+- [Feedback](#feedback)
+
+<br>
+
+## Introduction
 <p>
 
-Notezy is a fully-featured note-taking web application. It offers quick and easy note creation, deletion, retrieval, management, searching, and sharing. Notezy is a quick and easy way to take and manage notes anytime and anywhere.
+**Notezy** is a fully-featured note-taking web application. It offers quick and easy note creation, deletion, retrieval, management, searching, and sharing. Notezy is a quick and easy way to take and manage notes anytime and anywhere.
 
 </p>
 
@@ -23,14 +42,14 @@ Notezy is a fully-featured note-taking web application. It offers quick and easy
 
   
 
-## Deployed Link
+## Deployed Links
 
-<b>You can check the deployed backend here 👉: </b> [Notezy](https://touristerapp.onrender.com/)
+* <b>Deployed Backend 👉: </b> [Notezy](https://touristerapp.onrender.com/)
 
-<b>You can check the API documentation created using Postman here 👉: </b> [API Documentation](https://documenter.getpostman.com/view/27055315/2s9YsFEELg)
+* <b>Postman API Documentation 👉: </b> [API Documentation](https://documenter.getpostman.com/view/27055315/2s9YsFEELg)
   
   
-<be>
+<br>
 
 ## Technologies and Features
 
@@ -50,6 +69,35 @@ Notezy is a fully-featured note-taking web application. It offers quick and easy
 
 <br>
 
+
+### Choice of Technologies
+
+#### Framework: Express.js
+I opted for Express.js, a popular and lightweight Node.js web application framework. Its simplicity and flexibility make it an ideal choice for building scalable and efficient RESTful APIs.
+
+#### Database: MongoDB
+For the database, I chose MongoDB, a NoSQL database. Its document-oriented structure aligns well with the JSON-like data of my application. MongoDB offers flexibility and scalability, making it suitable for storing notes and user-related information.
+
+#### Full-Text Search: Atlas Search
+To enhance search functionality, I integrated Atlas Search, a powerful feature provided by MongoDB Atlas. It ensures efficient and accurate full-text search capabilities for notes based on keywords. I have also implemented features like "Autocomplete", and "Fuzzy Search".
+
+#### Security Packages
+- **bcrypt**: Used for securely hashing passwords, enhancing user authentication.
+- **JWT (JSON Web Tokens)**: Implemented for secure and stateless user authentication by generating and verifying tokens.
+- **morgan**: Utilized for HTTP request logging during development.
+- **cookie-parser**: Used for parsing cookies from incoming requests.
+
+
+#### Additional Security and Performance Measures
+- **express-rate-limit**: Helps mitigate security risks by implementing rate limiting and request throttling, protecting against potential attacks.
+- **helmet**: Applied to enhance security by setting various HTTP headers.
+- **express-mongo-sanitize**: Applied to sanitize user input and prevent MongoDB injection attacks.
+- **hpp (HTTP Parameter Pollution)**: Implemented to protect against parameter pollution attacks in HTTP requests.
+- **compression**: Implemented for response compression, improving application performance.
+- **helmet xss-clean**: Added for protection against Cross-Site Scripting (XSS) attacks.
+
+These technology choices are aimed at providing a secure, scalable, and efficient environment for building and deploying the Notezy application.
+
   
 
 This project consists of wide variety of advanced features:
@@ -68,35 +116,20 @@ This project consists of wide variety of advanced features:
 
   
 
-.
 
-├── controllers # This folder contains the controllers of the application. These controllers handle incoming requests from clients, interact with the model to retrieve or update data, and send responses back to the client.
-
-├── models # This folder handles the data and manages the schema of the data to be stored in the database.
-
-├── public # This folder handles images, JavaScript, and CSS that are related to the website and can be accessed by the client.
-
-├── Routes # This folder handles the routes of the application, determining what actions need to be performed for specific routes.
-
-├── utils # This folder manages the utility files that contain classes used throughout the website.
-
-├── views # This folder manages the templates used to generate the view of the website.
-
-├── .eslintrc.json
-
-├── .gitignore
-
-├── .prettierrc
-
-├── app.js
-
-├── package-lock.json
-
-├── package.json
-
-├── README.md
-
-└── server.js
+    ├── controllers             # This folder contains the controllers of the application. These controllers handle incoming requests from clients, interact with the model to retrieve or update data, and send responses back to the client.
+    ├── models                  # This folder handles the data and manages the schema of the data to be stored in the database.
+    ├── public                  # This folder handles images, JavaScript, and CSS that are related to the website and can be accessed by the client.
+    ├── Routes                  # This folder handles the routes of the application, determining what actions need to be performed for specific routes.
+    ├── utils                   # This folder manages the utility files that contain classes used throughout the website.
+    ├── views                   # This folder manages the templates used to generate the view of the website. 
+    ├── .gitignore  
+    ├── .prettierrc
+    ├── app.js
+    ├── package-lock.json
+    ├── package.json
+    ├── README.md
+    └── server.js
 
   
 
@@ -141,16 +174,22 @@ Install dependencies
 npm  install
 ```
 
-  
+Add a config.env file in the root directory and enter your MongoDb Atlas and REDIS Client credentials 
+The format of config.env file should be similar to the following
+```
+DATABASE=Your_MongoDB_Connection_String
+REDISPASSWORD=Your_REDIS_Client_Password
+JWT_SECRET=Your_JWT_Secret_Key
+JWT_EXPIRES_IN=Your_JWT_Expiry_Time
+JWT_COOKIE_EXPIRES_IN=Your_JWT_Cookie_Expiry_Time
+```
 
 To start the server in development mode
 
   
 
 ```
-
 npm run dev
-
 ```
 
   
@@ -160,13 +199,15 @@ To start the server in production mode
   
 
 ```
-
 npm run start:prod
-
 ```
 
   
 
 Server will run on  `localhost:3000`.
 
-<br>
+<be>
+
+## Feedback
+
+Feel free to send any feedback on [Twitter](https://twitter.com/palaksharma2312) or [file an issue](https://github.com/Palaksharma23/Notezy/issues/new). 
